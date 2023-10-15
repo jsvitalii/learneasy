@@ -11,7 +11,7 @@ const MakeAdmin = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/addUser/admin`, {
+    fetch(`https://learneasy.onrender.com/addUser/admin`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),

@@ -13,7 +13,7 @@ const Cart = () => {
   const [subTotal, setSubTotal] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cartOrders/${user.email}`)
+    fetch(`https://learneasy.onrender.com/cartOrders/${user.email}`)
       .then((res) => res.json())
       .then((data) => setCartOrders(data));
   }, [user]);
@@ -38,7 +38,7 @@ const Cart = () => {
     const proceed = window.confirm('Ви впевнені, що хочете видалити?');
 
     if (proceed) {
-      fetch(`http://localhost:5000/deleteCartOrder/${id}`, {
+      fetch(`https://learneasy.onrender.com/deleteCartOrder/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())
@@ -54,7 +54,7 @@ const Cart = () => {
   };
 
   const handleDeleteAll = (email) => {
-    fetch(`http://localhost:5000/deleteAllCartOrder/${email}`, {
+    fetch(`https://learneasy.onrender.com/deleteAllCartOrder/${email}`, {
       method: 'DELETE',
     })
       .then((res) => res.json())
@@ -73,7 +73,7 @@ const Cart = () => {
     data.quantity = totalQuantity;
 
     if (cartOrders.length) {
-      fetch(`http://localhost:5000/addOrder`, {
+      fetch(`https://learneasy.onrender.com/addOrder`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),

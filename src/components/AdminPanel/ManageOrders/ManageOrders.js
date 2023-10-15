@@ -7,20 +7,20 @@ const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/orders')
+    fetch('https://learneasy.onrender.com/orders')
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
   const handleUpdate = (id) => {
     const update = async () => {
-      await fetch(`http://localhost:5000/orders/${id}`, {
+      await fetch(`https://learneasy.onrender.com/orders/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(orders),
       });
 
-      await fetch('http://localhost:5000/orders')
+      await fetch('https://learneasy.onrender.com/orders')
         .then((res) => res.json())
         .then((data) => setOrders(data))
         .then(() => alert('Виконано'));
@@ -32,7 +32,7 @@ const ManageOrders = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm('Ви впевнені що хочете видалити?');
     if (proceed) {
-      fetch(`http://localhost:5000/deleteOrder/${id}`, {
+      fetch(`https://learneasy.onrender.com/deleteOrder/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())

@@ -7,7 +7,7 @@ const ManageCourses = () => {
   const [menus, setMenus] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/courses')
+    fetch('https://learneasy.onrender.com/courses')
       .then((res) => res.json())
       .then((data) => setMenus(data));
   }, []);
@@ -15,7 +15,7 @@ const ManageCourses = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm('Ви впевнені що хочете видалити?');
     if (proceed) {
-      fetch(`http://localhost:5000/deleteCourse/${id}`, {
+      fetch(`https://learneasy.onrender.com/deleteCourse/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())
