@@ -40,7 +40,7 @@ const ManageCourses = () => {
                   <tr>
                     <th scope="col">Зображення</th>
                     <th scope="col">Назва</th>
-                    <th scope="col">Опис</th>
+                    <th scope="col">Автор</th>
                     <th scope="col">Ціна</th>
                     <th scope="col"></th>
                   </tr>
@@ -55,7 +55,7 @@ const ManageCourses = () => {
                         <p>{menu.title}</p>
                       </td>
                       <td>
-                        <p>{menu.description}</p>
+                        <p>{menu.instructor}</p>
                       </td>
                       <td>
                         <p>${menu.price}</p>

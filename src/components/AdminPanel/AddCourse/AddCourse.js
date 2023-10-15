@@ -142,6 +142,15 @@ const AddCourse = () => {
                       <span className="error">фото автора обов'язкове</span>
                     )}
                   </div>
+                  <div className="form-group col-md-6">
+                    <input
+                      className="form-control"
+                      defaultValue=""
+                      {...register('category')}
+                      type="text"
+                      placeholder="Категорія"
+                    />
+                  </div>
                   <div className="form-group col-12">
                     <textarea
                       cols="30"
