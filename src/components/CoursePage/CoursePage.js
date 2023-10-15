@@ -9,8 +9,8 @@ const CoursePage = () => {
     <div className="courses course-page">
       <div className="container">
         <div className="header-text text-center mb-5">
-          <h3>Popular Courses</h3>
-          <p>Discover Your Perfect Program In Our Courses.</p>
+          <h3>Курси</h3>
+          <p>Знайди свою ідеальну програму на наших курсах.</p>
         </div>
         <div className="row">
           {courses.map((course) => (

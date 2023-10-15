@@ -35,7 +35,8 @@ const Cart = () => {
   }, [cartOrders]);
 
   const handleDelete = (id) => {
-    const proceed = window.confirm('Are you sure you want to delete');
+    const proceed = window.confirm('Ви впевнені, що хочете видалити?');
+
     if (proceed) {
       fetch(`http://localhost:5000/deleteCartOrder/${id}`, {
         method: 'DELETE',
@@ -80,7 +81,7 @@ const Cart = () => {
         .then((res) => res.json())
         .then((result) => {
           if (result.insertedId && cartOrders.length) {
-            alert('Purchased successfully');
+            alert('Замовлення відправлено');
             reset();
             setCartOrders([]);
             setSubTotal(0);
@@ -89,7 +90,7 @@ const Cart = () => {
           }
         });
     } else {
-      alert('Please add a course in your cart!');
+      alert('Кошик порожній');
     }
   };
 
@@ -97,7 +98,7 @@ const Cart = () => {
     <div className="cart-section">
       <div className="container">
         <div className="row">
-          <h4 className="">Your Order</h4>
+          <h4 className="">Ваше Замовлення</h4>
           <div className="col-lg-8">
             {cartOrders.map((order) => (
               <div key={order._id} className="course-list">
@@ -113,21 +114,18 @@ const Cart = () => {
               </div>
             ))}
             {cartOrders.length === 0 && (
-              <p className="failure-alert">Your cart is empty!</p>
+              <p className="failure-alert">Ваш кошик порожній</p>
             )}
           </div>
           <div className="col-lg-4 ps-lg-5 mt-5 mt-lg-0">
             <div className="estimation-box">
-              <h4>Cart totals</h4>
+              <h4>Сума кошика</h4>
               <ul>
                 <li>
-                  Total Courses <span>{totalQuantity}</span>
-                </li>
-                <li>
-                  Subtotal <span>${subTotal}</span>
+                  Курсів <span>{totalQuantity}</span>
                 </li>
                 <li className="total">
-                  Total <span>${subTotal}</span>
+                  Сума <span>${subTotal}</span>
                 </li>
               </ul>
               <form
@@ -135,7 +133,7 @@ const Cart = () => {
                 className="mb-0 text-start"
               >
                 <button type="submit" className="btn-black">
-                  Proceed to checkout
+                  Оформити замовлення
                 </button>
               </form>
             </div>

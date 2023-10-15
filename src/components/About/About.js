@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutImg from '../../images/about-us.jpeg';
+import aboutImg from '../../images/about-us.jpg';
 import FeatureSection from '../FeatureSection/FeatureSection';
 import './About.scss';
 
@@ -14,22 +14,17 @@ const About = () => {
             </div>
             <div className="col-md-6">
               <div className="about-info">
-                <h3>Know About Us</h3>
+                <h3>Дізнайтесь Про Нас</h3>
                 <p>
-                  We provides more than 500 international courses to prove your
-                  skills. In this site you will get all quality courses. We have
-                  the best expertise to guide you.
+                  Ми пропонуємо найкращі міжнародні курси, щоб покращити ваші
+                  навички.
                 </p>
                 <ul>
-                  <li>Creative Study Pattern</li>
-                  <li>Quick Crash Courses</li>
-                  <li>Certification Awarded</li>
-                  <li>Provided with Experimental Examples</li>
+                  <li>Креативний Процес Навчання</li>
+                  <li>Експрес Курси</li>
+                  <li>Сертифікат Після Проходження</li>
+                  <li>Практика З Реальними Проектами</li>
                 </ul>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Veniam, dignissimos.
-                </p>
               </div>
             </div>
           </div>

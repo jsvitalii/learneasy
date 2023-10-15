@@ -10,8 +10,8 @@ const CourseSection = () => {
     <div className="course-section">
       <div className="container">
         <div className="header-text">
-          <h3>Popular Courses</h3>
-          <p>Discover Your Perfect Program In Our Courses.</p>
+          <h3>Популярні Курси</h3>
+          <p>Знайди свою ідеальну програму на наших курсах.</p>
         </div>
         <div className="row">
           {courses.slice(0, 6).map((course) => (

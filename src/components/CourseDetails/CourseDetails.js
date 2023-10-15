@@ -34,10 +34,8 @@ const CourseDetails = () => {
     title,
     category,
     duration,
-    lessons,
+    lesson,
     price,
-    rating,
-    review,
     image,
     description,
     instructor,
@@ -82,32 +80,16 @@ const CourseDetails = () => {
                   <img src={instructorImage} alt="" />
                 </div>
                 <div className="box">
-                  <h5>Created by</h5>
+                  <h5>Автор</h5>
                   <p className="mb-0">{instructor}</p>
-                </div>
-
-                <div className="box">
-                  <h5>Reviews</h5>
-                  <Rating
-                    emptySymbol="far fa-star"
-                    fullSymbol="fas fa-star"
-                    initialRating={3.9}
-                    readonly
-                  ></Rating>
-                  <p className="review-text">
-                    {rating} <span>({review} reviews)</span>
-                  </p>
                 </div>
               </div>
               <div className="bottom-area">
                 <ul className="indicator">
-                  <li className="active">Overview</li>
-                  <li>Curriculum</li>
-                  <li>Instructor</li>
-                  <li>Reviews</li>
+                  <li className="active">Огляд</li>
                 </ul>
                 <div className="indicator-details">
-                  <h4>Course Description</h4>
+                  <h4>Інформація Про Курс</h4>
                   <p>{description}</p>
                 </div>
               </div>
@@ -126,7 +108,7 @@ const CourseDetails = () => {
                     className="mb-0 text-start"
                   >
                     <button type="submit" className="btn-black">
-                      buy this course
+                      купити цей курс
                     </button>
                   </form>
                 ) : (
@@ -134,44 +116,37 @@ const CourseDetails = () => {
                     onClick={() => history.push('/login')}
                     className="btn-black"
                   >
-                    buy this course
+                    купити цей курс
                   </button>
                 )}
                 <ul>
                   <li>
                     <span>
                       <FontAwesomeIcon className="icon" icon={faClock} />
-                      Duration
+                      Тривалість
                     </span>
                     <span>{duration}</span>
                   </li>
                   <li>
                     <span>
                       <FontAwesomeIcon className="icon" icon={faBookOpen} />
-                      lessons
+                      уроків
                     </span>
-                    <span>{lessons}</span>
-                  </li>
-                  <li>
-                    <span>
-                      <FontAwesomeIcon className="icon" icon={faBookReader} />
-                      Enrolled
-                    </span>
-                    <span>0</span>
+                    <span>{lesson}</span>
                   </li>
                   <li>
                     <span>
                       <FontAwesomeIcon className="icon" icon={faLanguage} />
-                      Language
+                      Мова
                     </span>
                     <span>{language}</span>
                   </li>
                   <li>
                     <span>
                       <FontAwesomeIcon className="icon" icon={faCertificate} />
-                      Certificate
+                      Сертифікат
                     </span>
-                    <span>yes</span>
+                    <span>Так</span>
                   </li>
                 </ul>
               </div>

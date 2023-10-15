@@ -9,8 +9,8 @@ const FeatureSection = () => {
     <div className="feature-section">
       <div className="container">
         <div className="header-text text-center">
-          <h3>Why Study With Skola</h3>
-          <p>Discover Your Perfect Program In Our Courses.</p>
+          <h3>Навіщо вчитися з LearnEasy</h3>
+          <p>Знайди свою ідеальну програму на наших курсах.</p>
         </div>
         <div className="row">
           <div className="col-md-4">
@@ -18,10 +18,9 @@ const FeatureSection = () => {
               <div className="icon">
                 <img src={icon1} alt="" />
               </div>
-              <h5>Learn Anything</h5>
+              <h5>Вивчайте Будь-що</h5>
               <p>
-                A range of courses across gardening, <br /> photography and
-                more.
+                Асортимент курсів з програмування, <br /> дизайну та більше.
               </p>
             </div>
           </div>
@@ -30,9 +29,9 @@ const FeatureSection = () => {
               <div className="icon icon2">
                 <img src={icon2} alt="" />
               </div>
-              <h5>Flexible Learning</h5>
+              <h5>Гнучке Навчання</h5>
               <p>
-                Knowledge discovery that helps you <br /> understand any topic.
+                Можливість проходити курси будь-де <br /> та будь-коли.
               </p>
             </div>
           </div>
@@ -41,10 +40,10 @@ const FeatureSection = () => {
               <div className="icon icon3">
                 <img src={icon3} alt="" />
               </div>
-              <h5>Learn With Experts</h5>
+              <h5>Навчайся З Експертами</h5>
               <p>
-                Experts delivered you the best support <br /> regarding your
-                need.
+                Експерти надають вам найкращу підтримку <br /> відповідно ваших
+                потреб.
               </p>
             </div>
           </div>

@@ -10,9 +10,9 @@ const Home = () => {
           <div className="col-md-6 mb-5 mb-md-0">
             <div className="text-box">
               <h1>
-                More Than 500 <span>Online Courses</span>
+                Почни проходити <span>Онлайн Курси</span>
               </h1>
-              <p>An investment in knowledge pays the best interest.</p>
+              <p>Інвестиція в знання має найкращі відсотки.</p>
             </div>
           </div>
           <div className="col-md-6">

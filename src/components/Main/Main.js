@@ -9,7 +9,6 @@ const Main = () => {
       <HomeBanner />
       <FeatureSection />
       <CourseSection />
-      <GetApp />
     </div>
   );
 };
