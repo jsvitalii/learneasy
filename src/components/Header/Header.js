@@ -14,28 +14,28 @@ const Header = () => {
     <nav className="navbar navbar-expand-md fixed-top">
       <div className="container">
         <Link className="link" to="/home">
-          <h3 className="logo">edumodo</h3>
+          <h3 className="logo">LearnEasy</h3>
         </Link>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="link" to="/home">
-                Home
+                Головна
               </Link>
             </li>
             <li className="nav-item">
               <Link className="link" to="/courses">
-                Courses
+                Курси
               </Link>
             </li>
             <li className="nav-item">
               <Link className="link" to="/about">
-                About Us
+                Про нас
               </Link>
             </li>
             <li className="nav-item">
               <Link className="link" to="/contact">
-                Contact
+                Контакти
               </Link>
             </li>
           </ul>

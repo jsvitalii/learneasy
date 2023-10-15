@@ -12,11 +12,8 @@ const TopHeader = () => {
   return (
     <header className="top-header navbar sticky-top bg-dark flex-md-nowrap">
       <Link className="link logo col-md-3 col-lg-2 text-center" to="/home">
-        <h3 className="">edumodo</h3>
+        <h3 className="">LearnEasy</h3>
       </Link>
-      {/* <Link className="link" to="/home">
-               <h3 className="logo">edumodo</h3>
-            </Link> */}
 
       <button
         className="navbar-toggler position-absolute d-md-none collapsed"
