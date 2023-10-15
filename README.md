@@ -1,4 +1,4 @@
-# learneasy
+# LearnEasy
 
 use Node.js v16
 
