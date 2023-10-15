@@ -23,14 +23,14 @@ const ManageOrders = () => {
       await fetch('http://localhost:5000/orders')
         .then((res) => res.json())
         .then((data) => setOrders(data))
-        .then(() => alert('Approved successfully'));
+        .then(() => alert('Виконано'));
     };
 
     update();
   };
 
   const handleDelete = (id) => {
-    const proceed = window.confirm('Are you sure you want to delete');
+    const proceed = window.confirm('Ви впевнені що хочете видалити?');
     if (proceed) {
       fetch(`http://localhost:5000/deleteOrder/${id}`, {
         method: 'DELETE',
@@ -51,16 +51,16 @@ const ManageOrders = () => {
         <div className="row">
           <div className="col">
             <div className="menu-table">
-              <h4>manage orders</h4>
+              <h4>замовлення</h4>
               <table className="table mb-0">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Order Date</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Дата замовлення</th>
+                    <th scope="col">Кількість</th>
+                    <th scope="col">Сума</th>
+                    <th scope="col">Статус</th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -85,14 +85,14 @@ const ManageOrders = () => {
                               onClick={() => handleUpdate(order._id)}
                               className="btn-black action"
                             >
-                              Make Delivery
+                              Виконати
                             </button>
                           ) : (
                             <button
                               className="btn-black action delivered"
                               disabled
                             >
-                              Delivered
+                              Виконано
                             </button>
                           )}
                         </p>
@@ -115,7 +115,7 @@ const ManageOrders = () => {
                   {orders.length === 0 && (
                     <tr>
                       <td colSpan="6">
-                        <p className="mb-0">No orders yet!</p>
+                        <p className="mb-0">Замовлення відсутні</p>
                       </td>
                     </tr>
                   )}

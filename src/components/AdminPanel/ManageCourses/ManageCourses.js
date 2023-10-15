@@ -13,7 +13,7 @@ const ManageCourses = () => {
   }, []);
 
   const handleDelete = (id) => {
-    const proceed = window.confirm('Are you sure you want to delete');
+    const proceed = window.confirm('Ви впевнені що хочете видалити?');
     if (proceed) {
       fetch(`http://localhost:5000/deleteCourse/${id}`, {
         method: 'DELETE',
@@ -34,15 +34,15 @@ const ManageCourses = () => {
         <div className="row">
           <div className="col">
             <div className="menu-table">
-              <h4>manage all courses</h4>
+              <h4>Курси</h4>
               <table className="table mb-0">
                 <thead>
                   <tr>
-                    <th scope="col">Item</th>
-                    <th scope="col">Item name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Зображення</th>
+                    <th scope="col">Назва</th>
+                    <th scope="col">Опис</th>
+                    <th scope="col">Ціна</th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>

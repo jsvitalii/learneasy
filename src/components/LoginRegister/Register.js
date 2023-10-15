@@ -38,79 +38,80 @@ const Register = () => {
             {user?.email && (
               <p className="success-alert">Account created successfully</p>
             )}
-            <div className="form-box">
-              <h4>Sign up to Your Skola Account!</h4>
-              <button
-                onClick={signInWithGoogle}
-                className="btn-black google-btn shadow-sm"
-              >
-                <img src={googleIcon} alt="" /> Sign up With Google
-              </button>
-              <div className="divider">
-                <span>or Sign up with Email</span>
+            {!user?.email && (
+              <div className="form-box">
+                <h4>Створіть свій обліковий запис LearnEasy!</h4>
+                <button
+                  onClick={signInWithGoogle}
+                  className="btn-black google-btn shadow-sm"
+                >
+                  <img src={googleIcon} alt="" /> Реєстрація через Google
+                </button>
+                <div className="divider">
+                  <span>або через Email</span>
+                </div>
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="mb-0 text-start"
+                >
+                  <div className="row">
+                    <div className="form-group col-12">
+                      <label htmlFor="">Повне ім'я</label>
+                      <input
+                        className="form-control"
+                        type="name"
+                        defaultValue=""
+                        {...register('displayName', {
+                          required: true,
+                        })}
+                        placeholder="Ім'я"
+                      />
+                      {errors.displayName && (
+                        <span className="error">ім'я обов'язкове</span>
+                      )}
+                    </div>
+                    <div className="form-group col-12">
+                      <label htmlFor="">Ваш Email</label>
+                      <input
+                        className="form-control"
+                        type="email"
+                        defaultValue=""
+                        {...register('email', { required: true })}
+                        placeholder="Email"
+                      />
+                      {errors.email && (
+                        <span className="error">email обов'язковий</span>
+                      )}
+                    </div>
+                    <div className="form-group col-12">
+                      <label htmlFor="">Пароль</label>
+                      <input
+                        className="form-control"
+                        type="password"
+                        defaultValue=""
+                        {...register('password', {
+                          required: true,
+                        })}
+                        placeholder="Пароль"
+                      />
+                      {errors.password && (
+                        <span className="error">пароль обов'язковий</span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <p className="switcher">
+                      <Link className="link" to="/login">
+                        Авторизація
+                      </Link>
+                    </p>
+                    <button type="submit" className="btn-black">
+                      Реєстрація
+                    </button>
+                  </div>
+                </form>
               </div>
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                className="mb-0 text-start"
-              >
-                <div className="row">
-                  <div className="form-group col-12">
-                    <label htmlFor="">Full name</label>
-                    <input
-                      className="form-control"
-                      type="name"
-                      defaultValue=""
-                      {...register('displayName', {
-                        required: true,
-                      })}
-                      placeholder="Name"
-                    />
-                    {errors.displayName && (
-                      <span className="error">name is required</span>
-                    )}
-                  </div>
-                  <div className="form-group col-12">
-                    <label htmlFor="">Your Email</label>
-                    <input
-                      className="form-control"
-                      type="email"
-                      defaultValue=""
-                      {...register('email', { required: true })}
-                      placeholder="Email"
-                    />
-                    {errors.email && (
-                      <span className="error">email is required</span>
-                    )}
-                  </div>
-                  <div className="form-group col-12">
-                    <label htmlFor="">Password</label>
-                    <input
-                      className="form-control"
-                      type="password"
-                      defaultValue=""
-                      {...register('password', {
-                        required: true,
-                      })}
-                      placeholder="password"
-                    />
-                    {errors.password && (
-                      <span className="error">password is required</span>
-                    )}
-                  </div>
-                </div>
-                <div className="d-flex justify-content-between">
-                  <p className="switcher">
-                    Already an user?{' '}
-                    <Link className="link" to="/login">
-                      Login
-                    </Link>
-                  </p>
-                  <button type="submit" className="btn-black">
-                    Register
-                  </button>
-                </div>
-              </form>
-            </div>
+            )}
             {isLoading && (
               <div className="text-center pre-loader">
                 <div className="spinner-border" role="status"></div>

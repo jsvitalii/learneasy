@@ -35,65 +35,64 @@ const Login = () => {
         <div className="row">
           <div className="col">
             {error && <p className="failure-alert">{error}</p>}
-            {user?.email && (
-              <p className="success-alert">Logged in successfully</p>
-            )}
-            <div className="form-box">
-              <h4>Log In to Your Skola Account!</h4>
-              <button
-                onClick={signInWithGoogle}
-                className="btn-black google-btn shadow-sm"
-              >
-                <img src={googleIcon} alt="" /> Sign in With Google
-              </button>
-              <div className="divider">
-                <span>or Sign in with Email</span>
+            {user?.email && <p className="success-alert">Вхід успішний</p>}
+            {!user?.email && (
+              <div className="form-box">
+                <h4>Зайдіть у свій обліковий запис LearnEasy!</h4>
+                <button
+                  onClick={signInWithGoogle}
+                  className="btn-black google-btn shadow-sm"
+                >
+                  <img src={googleIcon} alt="" /> Зайти Через Google
+                </button>
+                <div className="divider">
+                  <span>або через Email</span>
+                </div>
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="mb-0 text-start"
+                >
+                  <div className="row">
+                    <div className="form-group col-12">
+                      <label htmlFor="">Ваш Email</label>
+                      <input
+                        className="form-control"
+                        defaultValue=""
+                        {...register('email', { required: true })}
+                        placeholder="Email"
+                      />
+                      {errors.email && (
+                        <span className="error">email обов'язковий</span>
+                      )}
+                    </div>
+                    <div className="form-group col-12">
+                      <label htmlFor="">Пароль</label>
+                      <input
+                        className="form-control"
+                        defaultValue=""
+                        {...register('password', {
+                          required: true,
+                        })}
+                        placeholder="Пароль"
+                      />
+                      {errors.password && (
+                        <span className="error">пароль обов'язковий</span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <p className="switcher">
+                      <Link className="link" to="/register">
+                        Реєстрація
+                      </Link>
+                    </p>
+                    <button type="submit" className="btn-black">
+                      Увійти
+                    </button>
+                  </div>
+                </form>
               </div>
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                className="mb-0 text-start"
-              >
-                <div className="row">
-                  <div className="form-group col-12">
-                    <label htmlFor="">Your Email</label>
-                    <input
-                      className="form-control"
-                      defaultValue=""
-                      {...register('email', { required: true })}
-                      placeholder="Email"
-                    />
-                    {errors.email && (
-                      <span className="error">email is required</span>
-                    )}
-                  </div>
-                  <div className="form-group col-12">
-                    <label htmlFor="">Password</label>
-                    <input
-                      className="form-control"
-                      defaultValue=""
-                      {...register('password', {
-                        required: true,
-                      })}
-                      placeholder="password"
-                    />
-                    {errors.password && (
-                      <span className="error">password is required</span>
-                    )}
-                  </div>
-                </div>
-                <div className="d-flex justify-content-between">
-                  <p className="switcher">
-                    New user?{' '}
-                    <Link className="link" to="/register">
-                      Register
-                    </Link>
-                  </p>
-                  <button type="submit" className="btn-black">
-                    login
-                  </button>
-                </div>
-              </form>
-            </div>
+            )}
             {isLoading && (
               <div className="text-center pre-loader">
                 <div className="spinner-border" role="status"></div>

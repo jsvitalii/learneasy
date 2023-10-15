@@ -8,8 +8,8 @@ const NotFound = () => {
     <div className="not-found">
       <div className="container text-center">
         <img className="img-fluid" src={notFound} alt="" />
-        <h3>Ohh! Page Not Found</h3>
-        <Link to="/home">Back to home</Link>
+        <h3>Сторінка не знайдена</h3>
+        <Link to="/home">На головну</Link>
       </div>
     </div>
   );

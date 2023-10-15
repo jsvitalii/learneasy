@@ -31,20 +31,20 @@ const Dashboard = () => {
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <Link className="link" to={`${url}/addCourse`}>
-                    <FontAwesomeIcon className="fa-icon" icon={faThLarge} /> Add
-                    Course
+                    <FontAwesomeIcon className="fa-icon" icon={faThLarge} />{' '}
+                    Додати курс
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="link" to={`${url}/manageCourses`}>
                     <FontAwesomeIcon className="fa-icon" icon={faThLarge} />{' '}
-                    Manage Courses
+                    Курси
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="link" to={`${url}/manageOrders`}>
                     <FontAwesomeIcon className="fa-icon" icon={faThLarge} />{' '}
-                    Manage Orders
+                    Замовлення
                   </Link>
                 </li>
                 {/*<li className="nav-item">*/}
@@ -78,7 +78,7 @@ const Dashboard = () => {
                     onClick={logOut}
                   >
                     <FontAwesomeIcon className="fa-icon" icon={faSignOutAlt} />{' '}
-                    Logout
+                    Вихід
                   </span>
                 </li>
               </ul>

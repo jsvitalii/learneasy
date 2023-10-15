@@ -19,7 +19,7 @@ const AddCourse = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          alert('Course added successfully');
+          alert('Курс успішно додано!');
           reset();
         }
       });
@@ -32,7 +32,7 @@ const AddCourse = () => {
         <div className="row">
           <div className="col">
             <div className="form-box">
-              <h4>add course</h4>
+              <h4>додати курс</h4>
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 className="mb-0 text-start"
@@ -44,10 +44,10 @@ const AddCourse = () => {
                       defaultValue=""
                       {...register('title', { required: true })}
                       type="text"
-                      placeholder="Course title"
+                      placeholder="Назва курсу"
                     />
                     {errors.title && (
-                      <span className="error">title is required</span>
+                      <span className="error">назва обов'язкова</span>
                     )}
                   </div>
                   <div className="form-group col-md-6">
@@ -56,10 +56,10 @@ const AddCourse = () => {
                       defaultValue=""
                       {...register('duration', { required: true })}
                       type="text"
-                      placeholder="Course duration"
+                      placeholder="Тривалість курсу"
                     />
                     {errors.duration && (
-                      <span className="error">duration is required</span>
+                      <span className="error">тривалість обов'язкова</span>
                     )}
                   </div>
                   <div className="form-group col-md-6">
@@ -68,10 +68,12 @@ const AddCourse = () => {
                       defaultValue=""
                       {...register('lesson', { required: true })}
                       type="number"
-                      placeholder="Lessons"
+                      placeholder="Кількість уроків"
                     />
                     {errors.lesson && (
-                      <span className="error">lesson is required</span>
+                      <span className="error">
+                        кількість уроків обов'язкова
+                      </span>
                     )}
                   </div>
                   <div className="form-group col-md-6">
@@ -80,10 +82,10 @@ const AddCourse = () => {
                       defaultValue=""
                       {...register('price', { required: true })}
                       type="number"
-                      placeholder="Price"
+                      placeholder="Ціна"
                     />
                     {errors.price && (
-                      <span className="error">price is required</span>
+                      <span className="error">ціна обов'язвкова</span>
                     )}
                   </div>
                   <div className="form-group col-md-6">
@@ -92,24 +94,26 @@ const AddCourse = () => {
                       defaultValue=""
                       {...register('image', { required: true })}
                       type="text"
-                      placeholder="Image URL"
+                      placeholder="Лінк на зображення"
                     />
                     {errors.image && (
-                      <span className="error">image url is required</span>
+                      <span className="error">
+                        лінк на зображення обов'язковий
+                      </span>
                     )}
                   </div>
                   <div className="form-group col-md-6">
                     <select
                       className="form-control"
                       defaultValue=""
-                      placeholder="Course language"
+                      placeholder="Мова курсу"
                       {...register('language', { required: true })}
                     >
-                      <option value="bangla">Bangla</option>
-                      <option value="english">English</option>
+                      <option value="Українська">Українська</option>
+                      <option value="English">English</option>
                     </select>
                     {errors.language && (
-                      <span className="error">language is required</span>
+                      <span className="error">Мова обов'язвкова</span>
                     )}
                   </div>
                   <div className="form-group col-md-6">
@@ -118,10 +122,10 @@ const AddCourse = () => {
                       defaultValue=""
                       {...register('instructor', { required: true })}
                       type="text"
-                      placeholder="Instructor name"
+                      placeholder="Ім'я автора"
                     />
                     {errors.instructor && (
-                      <span className="error">instructor name is required</span>
+                      <span className="error">ім'я автора обов'язкове</span>
                     )}
                   </div>
                   <div className="form-group col-md-6">
@@ -132,12 +136,10 @@ const AddCourse = () => {
                         required: true,
                       })}
                       type="text"
-                      placeholder="Instructor image URL"
+                      placeholder="Лінк на фото автора"
                     />
                     {errors.instructorImage && (
-                      <span className="error">
-                        instructor image url is required
-                      </span>
+                      <span className="error">фото автора обов'язкове</span>
                     )}
                   </div>
                   <div className="form-group col-12">
@@ -150,15 +152,15 @@ const AddCourse = () => {
                         required: true,
                       })}
                       type="text"
-                      placeholder="Description"
+                      placeholder="Опис"
                     />
                     {errors.description && (
-                      <span className="error">description is required</span>
+                      <span className="error">опис обов'язковий</span>
                     )}
                   </div>
                 </div>
                 <button type="submit" className="btn-black">
-                  Submit
+                  Додати
                 </button>
               </form>
             </div>
