@@ -1,6 +1,5 @@
 import CourseSection from '../CourseSection/CourseSection';
 import FeatureSection from '../FeatureSection/FeatureSection';
-import GetApp from '../GetApp/GetApp';
 import HomeBanner from '../HomeBanner/HomeBanner';
 
 const Main = () => {

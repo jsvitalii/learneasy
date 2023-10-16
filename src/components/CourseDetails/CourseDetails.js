@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Rating from 'react-rating';
 import useAuth from '../../hooks/useAuth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBookOpen,
   faClock,
-  faBookReader,
   faLanguage,
   faCertificate,
 } from '@fortawesome/free-solid-svg-icons';

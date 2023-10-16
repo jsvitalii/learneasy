@@ -17,19 +17,27 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
-  const [admin, setAdmin] = useState(null);
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
-  // sign in with google
+  // user state change
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser({});
+      }
+      setIsLoading(false);
+    });
+  }, [auth]);
+
+  // sign in with Google
   const handleGoogleSignIn = (location, history) => {
     setIsLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((res) => {
         setUser(res.user);
-        const name = res.user.displayName;
-        const email = res.user.email;
-        // saveUser(email, name, "PUT");
         const destination = location?.state?.from || '/';
         history.replace(destination);
       })
@@ -43,7 +51,6 @@ const useFirebase = () => {
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((res) => {
         setUser(res.user);
-        // saveUser(data.email, data.displayName, "POST");
         updateProfile(auth.currentUser, {
           displayName: data.displayName,
         })
@@ -93,36 +100,6 @@ const useFirebase = () => {
       .catch((err) => setError(err.message));
   };
 
-  // user state change
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-      } else {
-        setUser({});
-      }
-      setIsLoading(false);
-    });
-  }, [auth]);
-
-  // save user to database
-  // const saveUser = (email, displayName, method) => {
-  //    const user = { email, displayName };
-  //    fetch("https://learneasy.onrender.com/addUser", {
-  //       method: method,
-  //       headers: {
-  //          "content-type": "application/json",
-  //       },
-  //       body: JSON.stringify(user),
-  //    }).then();
-  // };
-
-  // useEffect(() => {
-  //    fetch(`https://learneasy.onrender.com/users/${user.email}`)
-  //       .then((res) => res.json())
-  //       .then((data) => setAdmin(data.admin));
-  // }, [user.email]);
-
   return {
     user,
     setUser,
@@ -132,7 +109,6 @@ const useFirebase = () => {
     handleCreateUser,
     handleLoginUser,
     isLoading,
-    admin,
   };
 };
 

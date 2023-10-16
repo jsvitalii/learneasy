@@ -16,7 +16,7 @@ const Cart = () => {
     fetch(`https://learneasy.onrender.com/cartOrders/${user.email}`)
       .then((res) => res.json())
       .then((data) => setCartOrders(data));
-  }, [user]);
+  }, [user.email]);
 
   useEffect(() => {
     if (cartOrders.length) {

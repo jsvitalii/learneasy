@@ -36,7 +36,7 @@ const Register = () => {
           <div className="col">
             {error && <p className="failure-alert">{error}</p>}
             {user?.email && (
-              <p className="success-alert">Account created successfully</p>
+              <p className="success-alert">Обліковий запис успішно створено</p>
             )}
             {!user?.email && (
               <div className="form-box">
