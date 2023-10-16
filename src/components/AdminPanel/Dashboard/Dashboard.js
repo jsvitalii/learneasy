@@ -9,9 +9,6 @@ import './Dashboard.scss';
 import AddCourse from '../AddCourse/AddCourse';
 import ManageCourses from '../ManageCourses/ManageCourses';
 import ManageOrders from '../ManageOrders/ManageOrders';
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import Contacts from '../Contacts/Contacts';
-import ManageUsers from '../ManageUsers/ManageUsers';
 
 const Dashboard = () => {
   const { path, url } = useRouteMatch();
@@ -47,30 +44,6 @@ const Dashboard = () => {
                     Замовлення
                   </Link>
                 </li>
-                {/*<li className="nav-item">*/}
-                {/*  <Link className="link" to={`${url}/contacts`}>*/}
-                {/*    <FontAwesomeIcon className="fa-icon" icon={faThLarge} />{' '}*/}
-                {/*    Manage Contacts*/}
-                {/*  </Link>*/}
-                {/*</li>*/}
-                {/*<li className="nav-item">*/}
-                {/*   <Link className="link" to={`${url}/manageUsers`}>*/}
-                {/*      <FontAwesomeIcon*/}
-                {/*         className="fa-icon"*/}
-                {/*         icon={faThLarge}*/}
-                {/*      />{" "}*/}
-                {/*      Manage Users*/}
-                {/*   </Link>*/}
-                {/*</li>*/}
-                {/*<li className="nav-item">*/}
-                {/*   <Link className="link" to={`${url}/makeAdmin`}>*/}
-                {/*      <FontAwesomeIcon*/}
-                {/*         className="fa-icon"*/}
-                {/*         icon={faThLarge}*/}
-                {/*      />{" "}*/}
-                {/*      Make Admin*/}
-                {/*   </Link>*/}
-                {/*</li>*/}
                 <li className="nav-item">
                   <span
                     className="link"
@@ -98,15 +71,6 @@ const Dashboard = () => {
               </Route>
               <Route path={`${path}/manageOrders`}>
                 <ManageOrders />
-              </Route>
-              <Route path={`${path}/contacts`}>
-                <Contacts />
-              </Route>
-              <Route path={`${path}/manageUsers`}>
-                <ManageUsers />
-              </Route>
-              <Route path={`${path}/makeAdmin`}>
-                <MakeAdmin />
               </Route>
               <Route path="*">
                 <NotFound />

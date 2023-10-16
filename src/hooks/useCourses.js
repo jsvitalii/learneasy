@@ -13,7 +13,7 @@ const useCourses = () => {
       .then((data) => setLoading(false));
   }, []);
 
-  return [menus, loading];
+  return [menus, loading, setMenus];
 };
 
 export default useCourses;

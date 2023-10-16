@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import './ManageCourses.scss';
+import useCourses from '../../../hooks/useCourses';
 
 const ManageCourses = () => {
-  const [menus, setMenus] = useState([]);
-
-  useEffect(() => {
-    fetch('https://learneasy.onrender.com/courses')
-      .then((res) => res.json())
-      .then((data) => setMenus(data));
-  }, []);
+  const [menus, _, setMenus] = useCourses();
 
   const handleDelete = (id) => {
     const proceed = window.confirm('Ви впевнені що хочете видалити?');
+
     if (proceed) {
       fetch(`https://learneasy.onrender.com/deleteCourse/${id}`, {
         method: 'DELETE',
