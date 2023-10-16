@@ -14,9 +14,10 @@ import useCourses from '../../hooks/useCourses';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import SyncLoader from 'react-spinners/SyncLoader';
 
 const CourseDetails = () => {
-  const [courses] = useCourses();
+  const [courses, loading] = useCourses();
   const [details, setDetails] = useState({});
   const { handleSubmit, reset } = useForm();
   const { courseId } = useParams();
@@ -66,6 +67,20 @@ const CourseDetails = () => {
       });
     console.log(data);
   };
+
+  if (loading)
+    return (
+      <div className="home-pre-loader">
+        <div className="d-flex justify-content-center align-items-center">
+          <SyncLoader
+            className="syncloader"
+            color={'#2f2d52'}
+            loading={loading}
+            size={20}
+          />
+        </div>
+      </div>
+    );
 
   return (
     <div className="details-section">

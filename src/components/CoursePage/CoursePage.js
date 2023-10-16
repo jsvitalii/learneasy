@@ -1,9 +1,10 @@
 import React from 'react';
 import useCourses from '../../hooks/useCourses';
 import Course from '../Course/Course';
+import SyncLoader from 'react-spinners/SyncLoader';
 
 const CoursePage = () => {
-  const [courses] = useCourses();
+  const [courses, loading] = useCourses();
 
   return (
     <div className="courses course-page">
@@ -13,9 +14,20 @@ const CoursePage = () => {
           <p>Знайди свою ідеальну програму на наших курсах.</p>
         </div>
         <div className="row">
-          {courses.map((course) => (
-            <Course course={course} key={course._id}></Course>
-          ))}
+          {loading && (
+            <div className="d-flex justify-content-center align-items-center mt-5 mb-5">
+              <SyncLoader
+                className="syncloader"
+                color={'#2f2d52'}
+                loading={loading}
+                size={20}
+              />
+            </div>
+          )}
+          {!loading &&
+            courses.map((course) => (
+              <Course course={course} key={course._id}></Course>
+            ))}
         </div>
       </div>
     </div>
